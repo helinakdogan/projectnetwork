@@ -10,7 +10,7 @@ server_address = ('', 6001)  # Use port 6001 for chat
 chatResponder.bind(server_address)
 chatResponder.listen(1)  # Listen for incoming connections (backlog of 1)
 
-print("Responder is listening for incoming connections...")
+print("TCPserver is listening...")
 
 
 def save_chat_log(username, message):

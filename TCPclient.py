@@ -97,13 +97,13 @@ def mainMenu():
     print("1. Users")
     print("2. Chat")
     print("3. History")
-    nav = input("what do you want to do? (use the numbers): ")
+    nav = input("What do you want to do? (use the numbers): ")
     if nav == '1':
         display_available_users()
     elif nav == '2':
         chat()
     elif nav == '3':
-        client = input("who's chat history do you want to see? ")
+        client = input("Who's chat history do you want to see? ")
         history(client)
     else:
         print("invalid input")
