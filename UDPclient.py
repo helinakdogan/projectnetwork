@@ -10,8 +10,8 @@ client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 # Server address and port
 serverUDPaddress = ('192.168.0.106', 6000)
 
-# Client ID
-client_id = input("Enter your ID: ")
+# Client username
+client_id = input("Write your username:")
 
 # Storeing your username in a json format
 username = {'username': client_id}
