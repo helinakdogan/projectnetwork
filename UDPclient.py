@@ -2,35 +2,21 @@ import socket
 import json
 import time
 
-
-# Create a UDP socket
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-
-# Server address and port
+clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+clientSocket.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
 serverUDPaddress = ('192.168.0.106', 6000)
 
-# Client username
-client_id = input("Write your username:")
+clientUsername = input("Please, type your username:")
+username = {'username': clientUsername}
+file_path = 'usernames.json'
 
-# Storeing your username in a json format
-username = {'username': client_id}
-file_path = 'username.json'
-
-# Write the variable to the JSON file
 with open(file_path, 'w') as file:
     json.dump(username,file)
 
-username = json.dumps({'username': client_id})
+username = json.dumps({'username': clientUsername})
 
-
-print(f"Welcome {client_id}")
-print("connecting to server")
+print(f"User {clientUsername} is connected to UDP Server")
 
 while True:
-    # Send periodic announcements to the server
-    client_socket.sendto(username.encode(), serverUDPaddress)
-
-
-    # Wait for a while before sending the next announcement
-    time.sleep(8)  # Adjust as needed for periodic announcements
+    clientSocket.sendto(username.encode(), serverUDPaddress)
+    time.sleep(8)  
