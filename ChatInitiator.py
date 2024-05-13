@@ -101,9 +101,9 @@ def showHistory(client):
 
 # Function to display menu options and handle user input
 def menu():
-    print("1. Users - Display online and away users")
-    print("2. Chat - Initiate a chat with another user")
-    print("3. History - View chat history with a specific user")
+    print("1. Users")
+    print("2. Chat")
+    print("3. History")
     nav = input("Choose an option (use the numbers): ")
     if nav == '1':
         # Option to display user status
